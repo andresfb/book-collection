@@ -1,0 +1,6 @@
+read
+reading
+rejected
+lent
+donated
+gifted

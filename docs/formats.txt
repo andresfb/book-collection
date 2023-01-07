@@ -1,0 +1,4 @@
+hardcover
+paperback
+ebook
+audiobook

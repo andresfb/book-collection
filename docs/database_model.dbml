@@ -1,0 +1,49 @@
+Table authors {
+  id uuid [pk]
+  name varchar [not null]
+  info text
+}
+
+Table books {
+  id uuid [pk]
+  title varchar [not null]
+  cover_image varchar
+  description text
+  status varchar
+  deleted_at timestamp
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table author_books {
+  id uuid [pk]
+  book_id uuid [ref: > books.id]
+  author_id uuid [ref: > authors.id]
+}
+
+Table formats {
+  id uuid [pk]
+  name varchar
+}
+
+Table book_formats {
+  id uuid [pk]
+  book_id uuid [ref: > books.id]
+  format_id uuid [ref: > formats.id]
+}
+
+Table genres {
+  id uuid [pk]
+  name varchar [not null]
+}
+
+Table book_genres {
+  id uuid [pk]
+  book_id uuid [ref: > books.id]
+  genre_id uuid [ref: > genres.id]
+}
+
+Table statutes {
+  uuid [pk]
+  name varchar
+}
