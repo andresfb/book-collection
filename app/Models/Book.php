@@ -47,8 +47,8 @@ class Book extends Model implements HasMedia
     {
         return [
             'slug' => [
-                'source' => 'title'
-            ]
+                'source' => 'title',
+            ],
         ];
     }
 
