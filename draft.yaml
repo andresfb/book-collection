@@ -1,0 +1,62 @@
+models:
+  Author:
+    name: string:150
+    slug: string unique
+    info: nullable text
+    notes: nullable text
+    softDeletes
+    timestamps
+
+  Series:
+    title: string:400
+    slug: string:500 unique
+    description: nullable text
+    softDeletes
+    timestamps
+
+  Format:
+    name: string:20
+    timestamps: false
+
+  Genre:
+    name: string:30
+    slug: string:60
+    timestamps: false
+
+  Review:
+    user_id: id foreign
+    book_id: id foreign
+    rating: smallInteger
+    notes: nullable text
+    softDeletes
+    timestamps
+
+  Comment:
+    user_id: id foreign
+    book_id: id foreign
+    comment: text
+    softDeletes
+    timestamps
+
+  Journal:
+    user_id: id foreign
+    book_id: id foreign
+    status: string:20
+    note: text
+    softDeletes
+    timestamps
+
+  Book:
+    user_id: id foreign
+    title: string:400
+    slug: string:500 unique
+    description: nullable text
+    series_title: nullable string:400
+    published_at: nullable timestamp
+    softDeletes
+    timestamps
+    relationships:
+      hasMany: Comment, Review, Journal
+      belongsToMany: Author, Series, Format, Genre
+
+seeders: Format, Genre

@@ -1,18 +1,37 @@
 Table authors {
   id uuid [pk]
   name varchar [not null]
+  slug
   info text
 }
 
 Table books {
   id uuid [pk]
   title varchar [not null]
+  slug
+  series_title
   cover_image varchar
   description text
   status varchar
   deleted_at timestamp
   created_at timestamp
   updated_at timestamp
+}
+
+Table series {
+    id
+    title
+    slug
+    description
+    deleted_at timestamp
+    created_at timestamp
+    updated_at timestamp
+}
+
+Table series_books {
+    id
+    series_id
+    book_id
 }
 
 Table author_books {
@@ -35,6 +54,7 @@ Table book_formats {
 Table genres {
   id uuid [pk]
   name varchar [not null]
+  slug
 }
 
 Table book_genres {
@@ -46,4 +66,11 @@ Table book_genres {
 Table statutes {
   uuid [pk]
   name varchar
+}
+
+Table ratings {
+  id uuid [pk]
+  user_id [ref: = users.id]
+  book_id [ref: = books.id]
+  rating int
 }

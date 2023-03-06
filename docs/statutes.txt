@@ -1,3 +1,5 @@
+new
+tbr
 read
 reading
 rejected
