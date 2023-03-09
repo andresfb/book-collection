@@ -1,1 +1,2 @@
 https://cmgriffing.github.io/boringer-avatars/
+https://vue-chartjs.org
