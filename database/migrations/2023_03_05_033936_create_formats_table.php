@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('formats', function (Blueprint $table) {
             $table->id();
             $table->string('name', 20);
+            $table->boolean('is_digital')->default(false);
         });
     }
 

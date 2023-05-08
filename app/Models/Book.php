@@ -77,9 +77,9 @@ class Book extends Model implements HasMedia
         return $this->belongsToMany(Series::class);
     }
 
-    public function formats(): BelongsToMany
+    public function editions(): HasMany
     {
-        return $this->belongsToMany(Format::class);
+        return $this->hasMany(Edition::class);
     }
 
     public function genres(): BelongsToMany

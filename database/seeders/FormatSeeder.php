@@ -12,9 +12,9 @@ class FormatSeeder extends Seeder
      */
     public function run(): void
     {
-        Format::factory(['name' => 'hardcover'])->create();
-        Format::factory(['name' => 'paperback'])->create();
-        Format::factory(['name' => 'ebook'])->create();
-        Format::factory(['name' => 'audiobook'])->create();
+        Format::factory(['name' => 'hardcover', 'is_digital' => false])->create();
+        Format::factory(['name' => 'paperback', 'is_digital' => false])->create();
+        Format::factory(['name' => 'ebook', 'is_digital' => true])->create();
+        Format::factory(['name' => 'audiobook', 'is_digital' => true])->create();
     }
 }
